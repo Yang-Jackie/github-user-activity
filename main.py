@@ -43,7 +43,7 @@ def format_event(ev):
     elif etype == "DeleteEvent":
         return f"Deleted {payload["ref_type"]} in {repo}"
     elif etype == "IssueEvent":
-        return f"{payload.ref_type.capitalize()} an issue in {repo}"
+        return f"{payload["ref_type"].capitalize()} an issue in {repo}"
     else: return f"{etype} in {repo}"
 
 if not data: print("This user has no public events.")
