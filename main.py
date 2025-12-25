@@ -39,9 +39,9 @@ def format_event(ev):
     elif etype == "WatchEvent":
         return f"Starred {repo}"
     elif etype == "CreateEvent":
-        return f"Created {payload.ref_type} in {repo}"
+        return f"Created {payload["ref_type"]} in {repo}"
     elif etype == "DeleteEvent":
-        return f"Deleted {payload.ref_type} in {repo}"
+        return f"Deleted {payload["ref_type"]} in {repo}"
     elif etype == "IssueEvent":
         return f"{payload.ref_type.capitalize()} an issue in {repo}"
     else: return f"{etype} in {repo}"
